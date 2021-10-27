@@ -14,8 +14,8 @@ void draw()
   {
     for(int x = 0; x < width; x++)
     {
-      float a = map(x, 0, width, -2, 2);
-      float b = map(y, 0, height, -2, 2);
+      float a = map(x, 0, width, map(mouseX, 0, width, -2, 2), map(mouseY, 0, height, -2, 2));
+      float b = map(y, 0, height, map(mouseX, 0, width, -2, 2), map(mouseY, 0, height, -2, 2));
 
       c = new Complex(a, b);
 
@@ -38,7 +38,7 @@ boolean mandelbrot(Complex z, int n)
   if(abs(result.a + result.b) > 16)
     return false;
 
-  if(n == round((mouseX / float(width)) * 50))
+  if(n == 40)//round((mouseX / float(width)) * 50))
     return true;
   
   return mandelbrot(result, ++n);
