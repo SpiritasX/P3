@@ -24,8 +24,8 @@ void draw()
     for(int i = 0; i < width; i++)
     {
       // Set the distance from the point to be the maximum possible
-      float x = width;
-      float y = height;
+      float x = 2*width;
+      float y = 2*height;
       float prev_dist = dist(i, j, x, y);
       int closest = 1;
       
