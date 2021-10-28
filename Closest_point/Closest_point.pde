@@ -1,4 +1,4 @@
-int n = 30;
+int n = 1000;
 float points[];
 
 void setup()
@@ -42,16 +42,19 @@ void draw()
         }
       }
       
-      // Set the color of the pixel based on what point it's closest to
+      // Set the color of the pixel based on what point it's closest to with
+      // maximum brightness and a slightly lower saturation so the colors are "smoother"
       int index = i + j * width;
-      pixels[index] = color(255/closest, 255, 255);
+      pixels[index] = color(map(closest, 1, n, 0, 255), 170, 255);
     }
   }
   updatePixels();
   
-  // Draw points, can be commented out...
-  for(int i = 0; i < 2*n; i+=2)
+  // Commented part draws out all the points
+  /*for(int i = 0; i < 2*n; i+=2)
   {
     circle(points[i], points[i+1], 4);
-  }
+  }*/
+  
+  noLoop();
 }
