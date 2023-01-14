@@ -1,4 +1,4 @@
-int n = 7;
+int n = 2;
 int r = 200;
 int multiplier = 10;
 
